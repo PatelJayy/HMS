@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>       
+  <style>
+      .feedback-form {
+        width: 300px;
+        margin: 0 auto;
+        border: 10px;
+        border-color: rgb(98, 161, 213);                  
+        border-radius: 2px;
+        margin-top: 170px;
+        margin-right: 200px;
+      }
+
+      .feedback-form label,
+      .feedback-form textarea,
+      .feedback-form button {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .feedback-form textarea {
+        width: 100%;
+        height: 100px;
+      }
+      #sub{
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px;
+        background-color: #046169;
+        color: #ece3e3;
+        border: none;
+        cursor: pointer;
+      }
+      #sub:hover{
+        background-color: #023d7d;
+      }
+      
+      .feedback-form .message {
+        margin-top: 10px;
+        color: #007bff;
+        font-weight: bold;
+      }
+  </style>
+</head>
+<body style="background-image: url();
+background-repeat: no-repeat;
+background-size: 50%;">
+  <div class="feedback-form">
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm" action="thankyou.html" method="post">
+      <label for="name"><b>Name:</b></label>
+      <input type="text" id="name" name="name" required>
+      <label for="email"><b>Email:</b></label>
+      <input type="email" id="email" name="email" required>
+      <label for="message"><b>Message or any suggession from you:</b></label>
+      <textarea class="message" id="message" name="message" required></textarea>
+      <input id="sub" type="submit"></input>    
+    </form>
+    <div class="message" id="formMessage"></div>      
+  </div>
+
+</body>       
+</html>
+
+ 
