@@ -1,24 +1,20 @@
-<!-- FILEPATH: /f:/SEM 6/Agile/Development/lo/register.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Hospital Management System - Register</title>
     <link rel="stylesheet" href="register.css">
-    <script src="register.js"></script>
     <style>
-      
+        /* Add any additional styles here if needed */
     </style>
 </head>
 <body>
     <h1>Hospital Management System</h1>
 
-   
-    
-    <form method="POST" action="register.php">
-        <label for="name">name:</label>
+    <form id="registrationForm" method="POST" action="#">
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         
-        <label>Gender</label>
+        <label>Gender:</label>
         <input type="radio" id="male" name="gender" value="male" required>
         <label for="male">Male</label>
 
@@ -28,16 +24,41 @@
         <input type="radio" id="other" name="gender" value="other" required>
         <label for="other">Other</label>
         
-        <label for="email">email:</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         
-        <label for="password">password:</label>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         
         <input type="submit" value="Register">
-        if you have already registered then <a href="login.html">Login</a>
+        <p id="successMessage" style="display: none;">Registration Successful! Redirecting to login page...</p>
+        <p>If you have already registered, <a href="login.html">Login</a></p>
     </form>
 
-    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Perform form validation
+            var name = document.getElementById('name').value.trim();
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+            
+            // Check if all fields are filled
+            if (name === '' || !gender || email === '' || password === '') {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Display success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Redirect after 5 seconds
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
