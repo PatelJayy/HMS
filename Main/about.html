@@ -1,12 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add any additional styles here if needed */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+        .hospital-description {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hospital-description h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 10px;
+        }
+
+        .hospital-description p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .hospital-description ul {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hospital-description ul li {
+            list-style-type: none;
+            margin-left: 20px;
+            padding-left: 0;
+            position: relative; 
+        }
+
+        .hospital-description ul li::before {
+            content: "•"; 
+            position: absolute; 
+            left: -15px; 
+            color: #666; 
+        }
+    </style>
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>Welcome to our website! We are a team of passionate individuals dedicated to providing high-quality products and services.</p>
-    <p>Our mission is to make a positive impact in the world through innovative solutions and exceptional customer experiences.</p>
-    <p>Feel free to explore our website to learn more about what we do and how we can help you.</p>
+    <a href="javascript:void(0)" class="openNav" onclick="openNav()">☰ Menu</a>
+
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="user.html">Book a Bed</a>
+        <a href="#">Consult a Doctor</a>
+        <a href="#">Survey</a>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center mt-5 mb-4">About Us</h1>
+
+        <!-- About Us Description -->
+        <div class="hospital-description">
+            <p>Welcome to our website! We are a team of passionate individuals dedicated to providing high-quality products and services.</p>
+            <p>Our mission is to make a positive impact in the world through innovative solutions and exceptional customer experiences.</p>
+            <p>Feel free to explore our website to learn more about what we do and how we can help you.</p>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 </html>
