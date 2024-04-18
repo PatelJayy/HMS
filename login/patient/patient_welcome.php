@@ -55,14 +55,15 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     <title>Welcome - <?php echo $_SESSION['username'] ?></title>
 </head>
 <body>
-    <?php require 'partials/_nav.php' ?>
+    <?php require '../partials/_nav.php' ?>
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="./patient/profile.php">Profile</a>
+        <a href="profile.php">Profile</a>
         <a href="settings.php">Settings</a>
         <a href="bedbook.php">Patients</a>
-        <a href="appointments.php">Appointments</a>
+        <a href="patient_appointment.php">Appointments</a>
+        <a href="check_appointment.php">Check appointments</a>
     </div>
 
     <div id="main">

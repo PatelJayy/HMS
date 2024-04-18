@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 05:35 AM
+-- Generation Time: Apr 03, 2024 at 06:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `sno` int(11) NOT NULL,
   `username` varchar(23) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `Gender` varchar(11) NOT NULL,
   `password` varchar(23) NOT NULL,
   `dt` datetime NOT NULL DEFAULT current_timestamp()
@@ -39,10 +40,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`sno`, `username`, `Gender`, `password`, `dt`) VALUES
-(1, 'admin', 'male', 'admin', '2024-04-03 07:06:30'),
-(4, 'Karikato', 'male', '123', '2024-04-03 08:55:35'),
-(5, 'JAY', 'male', 'JAY', '2024-04-03 08:56:31');
+INSERT INTO `users` (`sno`, `username`, `phone`, `Gender`, `password`, `dt`) VALUES
+(1, 'admin', '8785974558', 'male', 'admin', '2024-04-03 09:48:42');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +62,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,13 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'partials/_dbconnect.php';
     
     $username = $_POST["username"];
+    $phone = $_POST["phone"];
     $gender = $_POST["gender"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
     $existSql="SELECT * FROM `users` WHERE username='$username'";
     // Ensure password and confirm password match
     if ($password == $cpassword) {
-        $sql = "INSERT INTO `users` (`username`, `Gender`, `password`, `dt`) VALUES ('$username', '$gender', '$password', current_timestamp());";
+        $sql = "INSERT INTO `users` (`username`, `phone`,`Gender`, `password`, `dt`) VALUES ('$username','$phone' ,'$gender', '$password', current_timestamp());";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -53,40 +54,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php endif; ?>
 
 <div class="container">
-    <h1 class='text-center'>Signup to the website</h1>
+        <h1 class='text-center'>Signup to the website</h1>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
 
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" name="username">
-        </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
 
-        <div class="form-group">
-            <label>Gender:</label>
-            <br>
-            <label>Male:</label>
-            <input type="radio" class="form-control" name="gender" value="male" required>
-            <label for="female">Female</label>
-            <input type="radio" class="form-control" name="gender" value="female" required>
-            <label for="other">Other</label>
-            <input type="radio" class="form-control" name="gender" value="other" required>
-        </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Phone no:</label>
+                <input type="number" class="form-control" id="password" name="password">
+            </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <br>
+                <label>Male:</label>
+                <input type="radio" class="form-control" name="gender" value="male" required>
+                <label for="female">Female</label>
+                <input type="radio" class="form-control" name="gender" value="female" required>
+                <label for="other">Other</label>
+                <input type="radio" class="form-control" name="gender" value="other" required>
+            </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Confirm Password</label>
-            <input type="password" class="form-control" id="cpassword" name="cpassword">
-            <small id="emailHelp" class="form-text text-muted">Passwords should match</small>
-        </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input type="password" class="form-control" id="cpassword" name="cpassword">
+                <small id="emailHelp" class="form-text text-muted">Passwords should match</small>
+            </div>
 
-    </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
 </div>
 
 <!-- Optional JavaScript -->
