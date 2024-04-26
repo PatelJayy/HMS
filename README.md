@@ -1,1 +1,1 @@
-"# HMS" 
+This is a code for a hospital management system using lamp stack. It is a basic code with xamp server connected to add and display from the database. This code can be editied to a booking/appointment code.
