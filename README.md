@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "# HMS" 
 # HMS (Hospital Management System)
 
@@ -39,3 +40,6 @@ Press the Logs button to view error logs and check
 the Windows Event Viewer for more clues
 If you need more help, copy and post this
 entire log window on the forums
+=======
+This is a code for a hospital management system using lamp stack. It is a basic code with xamp server connected to add and display from the database. This code can be editied to a booking/appointment code.
+>>>>>>> fd6c89775ddb95a80f8c74f84df082f09cd606a1
